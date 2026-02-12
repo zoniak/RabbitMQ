@@ -11,10 +11,12 @@ Pasos para usar el proyecto:
    node consumer.js
 
 Para enviar 10 mensajes a la vez con powershell:
-1..10 | ForEach-Object {
+----------------------------------------
+" 1..10 | ForEach-Object {
 $body = "{""id"": $_, ""producto"": ""Item $_"", ""email"": ""pedido$_@hlanz.es""}"
 Invoke-RestMethod -Uri "http://localhost:3000/comprar" -Method Post -ContentType "application/json" -Body $body
-}
+} "
+----------------------------------------
 
 JSON ejemplo por si quiero hacerlo con postman:
 {"id": 101, "producto": "Teclado", "email": "alumno@escuela.com"}
